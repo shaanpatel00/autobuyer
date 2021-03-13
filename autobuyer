@@ -1,5 +1,7 @@
 from selenium import webdriver  
 from playsound import playsound 
+from AppKit import NSSound
+import keyboard
 import time
 
 # open browser
@@ -26,7 +28,15 @@ while not buyButton:
         buyButton = True
 
 
+keepPlaying = True
+while(keepPlaying == True):
 
+    playsound("/Users/shaanpatel/python/autobuyer/soundscrate-alarm-clock.mp3")
+    
+    if(keyboard.is_pressed('q')):
+        keepPlaying = False
+    
+    time.sleep(1)
 
 # Out Of Stock Element: 
 # btn btn-disabled btn-lg btn-block add-to-cart-button
