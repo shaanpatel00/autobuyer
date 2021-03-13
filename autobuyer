@@ -1,5 +1,6 @@
 import time
 from selenium import webdriver
 
+# open browser
 browser = webdriver.Chrome('/Users/shaanpatel/python/chromedriver')
 
