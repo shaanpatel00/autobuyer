@@ -1,7 +1,7 @@
 from selenium import webdriver  
 from playsound import playsound 
 from AppKit import NSSound
-import keyboard
+import sys,tty
 import time
 
 # open browser
@@ -27,16 +27,14 @@ while not buyButton:
         print("Item is is stock!")
         buyButton = True
 
-
-keepPlaying = True
-while(keepPlaying == True):
-
-    playsound("/Users/shaanpatel/python/autobuyer/soundscrate-alarm-clock.mp3")
-    
-    if(keyboard.is_pressed('q')):
-        keepPlaying = False
-    
-    time.sleep(1)
+tty.setcbreak(sys.stdin)  
+key = ord(sys.stdin.read(1))  # key captures the key-code 
+   # based on the input we do something - in this case print something
+if key==97:
+    print ("you pressed a")
+else:
+    print ("you pressed something else ...")
+sys.exit(0)
 
 # Out Of Stock Element: 
 # btn btn-disabled btn-lg btn-block add-to-cart-button
