@@ -27,14 +27,17 @@ while not buyButton:
         print("Item is is stock!")
         buyButton = True
 
-tty.setcbreak(sys.stdin)  
-key = ord(sys.stdin.read(1))  # key captures the key-code 
-   # based on the input we do something - in this case print something
-if key==97:
-    print ("you pressed a")
-else:
-    print ("you pressed something else ...")
+keepPlaying = True
+while (keepPlaying == True):
+    playsound("/Users/shaanpatel/python/autobuyer/soundscrate-alarm-clock.mp3")
+    tty.setcbreak(sys.stdin)  
+    key = ord(sys.stdin.read(1))  # key captures the key-code 
+    # based on the input we do something - in this case print something
+    if key==97:
+        keepPlaying = False
+
 sys.exit(0)
+
 
 # Out Of Stock Element: 
 # btn btn-disabled btn-lg btn-block add-to-cart-button
